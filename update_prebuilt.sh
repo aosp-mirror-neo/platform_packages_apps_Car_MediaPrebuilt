@@ -16,7 +16,7 @@ function downloadApp {
     # sudo apt update && \
     # sudo apt install android-fetch-artifact
 
-    CMD="fetch_artifact --bid $1 --target $TARGET --use_adc --use_shared_quota"
+    CMD="fetch_artifact --bid $1 --target $TARGET --use_oauth2"
 
     $CMD $2 $3
 }
@@ -24,6 +24,6 @@ function downloadApp {
 
 cd $(dirname $0)
 
-downloadApp $1 "CarMediaApp_aosp_cert.apk" "CarMediaApp.apk"
+downloadApp $1 "CarMediaApp_aaos_cert.apk" "CarMediaApp.apk"
 
 echo "Done. Don't forget to test and commit the new artifact."
